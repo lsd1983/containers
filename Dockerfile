@@ -1,3 +1,5 @@
-FROM ubuntu:latest
+FROM node:7-alpine
+
+RUN apk add -U subversion
 
 
