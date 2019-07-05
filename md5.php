@@ -32,7 +32,7 @@ if (isset($_POST['text'])){
 
 } else {
 
-echo 'No String provided';
+echo 'No String Provided';
 
 }
 
