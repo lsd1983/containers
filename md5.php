@@ -25,7 +25,7 @@ if (isset($_POST['text'])){
 	if ($md!=''){
 	
 		echo md5($md);
-		echo 'done';
+		
 	}
 
 
