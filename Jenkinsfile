@@ -15,7 +15,7 @@ pipeline {
                 echo 'Stopping...'
               //  sh 'docker stop webmd5'
               //  sh 'docker system prune -f'
-                sh 'docker run -dit -p 8000:80 --name web ubuntu:latest'
+                sh 'docker run -dit -p 8000:80 --name web webmd5:latest'
             
             }
         }
