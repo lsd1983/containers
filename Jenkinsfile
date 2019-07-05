@@ -4,7 +4,7 @@ pipeline {
         stage('Build') {
             steps {
                 echo 'Running build automation'
-                sh 'docker build -t ubuntu .'
+                sh 'docker build -t webmd5 .'
               
             }
         }
@@ -13,8 +13,8 @@ pipeline {
             steps{
                 echo 'Doploying Container'
                 echo 'Stopping...'
-                sh 'docker stop web'
-                sh 'docker system prune -f'
+              //  sh 'docker stop webmd5'
+              //  sh 'docker system prune -f'
                 sh 'docker run -dit -p 8000:80 --name web ubuntu:latest'
             
             }
