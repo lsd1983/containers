@@ -12,7 +12,10 @@ pipeline {
         stage('Deploy'){
             steps{
                 echo 'Doploying Container'
-                sh 'docker run -dit -p 8000:80 --name web ubuntu:latest '
+                echo 'Stopping...'
+                sh 'docker stop web'
+                sh 'docker system prune -f'
+                sh 'docker run -dit -p 8000:80 --name web ubuntu:latest'
             
             }
         }
