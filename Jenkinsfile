@@ -16,6 +16,7 @@ pipeline {
                sh 'docker stop webmd5'
                 sh 'docker system prune -f'
                 sh 'docker run -dit -p 8000:80 --name webmd5 webmd5:latest'
+                sh '$docker_hub'
             
             }
         }
