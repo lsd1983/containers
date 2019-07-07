@@ -12,11 +12,11 @@ pipeline {
         stage('Deploy'){
             steps{
                 echo 'Doploying Container'
-                echo 'Stopping...'
-               sh 'docker stop webmd5'
+                echo 'Stopping all md services'
+                sh 'docker stop $(docker ps -a -q)
                 sh 'docker system prune -f'
                 sh 'docker run -dit -p 8000:80 --name webmd5 webmd5:latest'
-                sh 'echo $docker_hub >> /tmp/1.txt'
+               
             
             }
         }
