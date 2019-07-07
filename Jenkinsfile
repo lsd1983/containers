@@ -15,6 +15,8 @@ pipeline {
                 echo 'Stopping all md services'
                 sh 'docker stop $(docker ps -a -q)
                 sh 'docker system prune -f'
+                sh 'docker rmi $(docker images -q)'
+
                 sh 'docker run -dit -p 8000:80 --name webmd5 webmd5:latest'
                
             
